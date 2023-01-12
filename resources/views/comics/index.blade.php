@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="container">
-        <h1>Comics</h1>
+        <h1 class="mb-4">Comics</h1>
+        <a href="" class="btn btn-success mb-2">Add New Comic</a>
         <table class="table table-striped">
             <thead>
               <tr>
@@ -21,12 +22,16 @@
                     <tr>
                         <td>{{ $comic->id }}</td>
                         <td>{{ $comic->title }}</td>
-                        <td>{{ $comic->description }}</td>
+                        <td><div class="my_description">{{ $comic->description }}</div></td>
                         <td>{{ $comic->price }}</td>
                         <td>{{ $comic->series }}</td>
                         <td>{{ $comic->sale_date }}</td>
                         <td>{{ $comic->type }}</td>
-                        <td>---</td>
+                        <td>
+                            <a href="" class="btn btn-primary my_btn"><i class="fa-solid fa-eye"></i></a>
+                            <a href="" class="btn btn-warning my_btn"><i class="fa-solid fa-pen"></i></a>
+                            <a href="" class="btn btn-danger my_btn"><i class="fa-solid fa-trash"></i></i></a>
+                        </td>
                     </tr>
                 @empty
                     <h2>No result.</h2>

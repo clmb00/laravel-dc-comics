@@ -1,1 +1,15 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+.my_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    aspect-ratio: 1/1;
+    margin-block: 6px;
+}
+
+.my_description{
+    max-height: 170px;
+    overflow: auto;
+}
