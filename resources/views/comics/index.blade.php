@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h1 class="mb-4">Comics</h1>
-        <a href="" class="btn btn-success mb-2">Add New Comic</a>
+        <a href="{{ route('comics.create') }}" class="btn btn-success mb-2">Add New Comic</a>
         <table class="table table-striped">
             <thead>
               <tr>

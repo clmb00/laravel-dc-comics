@@ -6,7 +6,7 @@
     <h5>{{ $comic->series }}</h5>
     <p>{{ $comic->description}}</p>
     <div class="text-center">
-        <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+        <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}" style="max-width: 100%; max-height: 500px;">
     </div>
     <p><strong>Price:</strong> {{ $comic->price }}</p>
     <p><strong>Type:</strong> {{ $comic->type }}</p>
