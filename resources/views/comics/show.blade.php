@@ -1,5 +1,14 @@
 @extends('layouts.main')
 
+@section('breadcrumb')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('comics.index') }}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Comic - {{ $comic->id}}</li>
+        </ol>
+    </nav>
+@endsection
+
 @section('content')
 <div class="container">
     <h1>{{ $comic->title }} - #{{ $comic->id }}</h1>

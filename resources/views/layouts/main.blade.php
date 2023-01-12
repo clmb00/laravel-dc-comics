@@ -22,6 +22,10 @@
 
     @include('partials.header')
 
+    <div class="container mt-3">
+        @yield('breadcrumb')
+    </div>
+
     <main>
         @yield('content')
     </main>

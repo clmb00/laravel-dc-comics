@@ -1,1 +1,1 @@
-<footer>F</footer>
+<footer></footer>

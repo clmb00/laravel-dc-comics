@@ -1,5 +1,13 @@
 @extends('layouts.main')
 
+@section('breadcrumb')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Home</li>
+        </ol>
+    </nav>
+@endsection
+
 @section('content')
     <div class="container">
         <h1 class="mb-4">Comics</h1>
