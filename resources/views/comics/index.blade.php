@@ -46,5 +46,7 @@
                 @endforelse
             </tbody>
         </table>
+
+        {{ $comics->links() }}
     </div>
 @endsection
