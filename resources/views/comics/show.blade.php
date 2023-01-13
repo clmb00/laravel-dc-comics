@@ -6,7 +6,7 @@
 <div class="container">
     <div class="d-flex justify-between align-items-center">
         <h1>{{ $comic->title }} - #{{ $comic->id }}</h1>
-        <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning ms-auto p-3"><i class="fa-solid fa-pen"></i></a>
+        <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning ms-auto my_btn_two"><i class="fa-solid fa-pen"></i></a>
     </div>
     <h5>{{ $comic->series }}</h5>
     <p>{{ $comic->description}}</p>
