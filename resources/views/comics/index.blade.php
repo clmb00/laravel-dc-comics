@@ -1,12 +1,6 @@
 @extends('layouts.main')
 
-@section('breadcrumb')
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Home</li>
-        </ol>
-    </nav>
-@endsection
+@include('partials.breadcrumb', ['link1'=>0])
 
 @section('content')
     <div class="container">

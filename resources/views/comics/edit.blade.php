@@ -1,17 +1,17 @@
 @extends('layouts.main')
 
-@section('breadcrumb')
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('comics.index') }}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Edit</li>
-        </ol>
-    </nav>
-@endsection
+@include('partials.breadcrumb', ['link1'=>'Edit'])
 
 @section('content')
     <div class="container">
-        <h1 style="display: inline;">Edit - {{ $comic->title}}</h1>
+
+        <div class="d-flex justify-between align-items-center">
+            <h1>Edit - {{ $comic->title}}</h1>
+            <div class="ms-auto">
+                @include('partials.form_delete', compact('comic'))
+            </div>
+        </div>
+
     <form action="{{ route('comics.update', $comic) }}" method="POST">
         @csrf
         @method('PUT')
@@ -50,10 +50,6 @@
         <a href="{{ route('comics.index') }}" class="btn btn-primary">Back</a>
         <button type="submit" class="btn btn-success">Edit</button>
     </form>
-
-    <div class="d-flex justify-content-end">
-        @include('partials.form_delete', compact('comic'))
-    </div>
 
     </div>
 @endsection
