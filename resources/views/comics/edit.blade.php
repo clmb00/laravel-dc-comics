@@ -89,7 +89,7 @@
           @enderror
         </div>
         <a href="{{ route('comics.index') }}" class="btn btn-primary">Back</a>
-        <button type="submit" class="btn btn-success">Edit</button>
+        <button type="submit" class="btn btn-warning">Edit</button>
     </form>
 
     </div>
