@@ -38,16 +38,10 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         $form_data = $request->all();
+        $form_data['slug'] = Comic::create_slug($form_data['title']);
 
         $new_comic = new Comic();
-        $new_comic->title = $form_data['inputTitle'];
-        $new_comic->slug = Comic::create_slug($new_comic->title);
-        $new_comic->description = $form_data['inputDescription'];
-        $new_comic->thumb = $form_data['inputThumb'];
-        $new_comic->price = $form_data['inputPrice'];
-        $new_comic->series = $form_data['inputSeries'];
-        $new_comic->sale_date = $form_data['inputDate'];
-        $new_comic->type = $form_data['inputType'];
+        $new_comic->fill($form_data);
         $new_comic->save();
 
         return redirect(route('comics.show', $new_comic));
@@ -72,7 +66,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -84,7 +78,17 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $form_data = $request->all();
+
+        if($form_data['title'] != $comic->title){
+            $form_data['slug'] = Comic::create_slug($form_data['title']);
+        } else {
+            $form_data['slug'] = $comic->slug;
+        }
+
+        $comic->update($form_data);
+
+        return redirect(route('comics.show', $comic));
     }
 
     /**
