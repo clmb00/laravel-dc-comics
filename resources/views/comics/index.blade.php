@@ -45,11 +45,7 @@
                         <td>
                             <a href="{{ route('comics.show', $comic) }}" class="btn btn-primary my_btn"><i class="fa-solid fa-eye"></i></a>
                             <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning my_btn"><i class="fa-solid fa-pen"></i></a>
-                            <form action="{{ route('comics.destroy', $comic) }}" method="POST" onsubmit="return confirm('Confermi l\'eliminazione di: {{$comic->title}} ?')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger my_btn" title="delete"><i class="fa-solid fa-trash"></i></button>
-                            </form>
+                            @include('partials.form_delete', compact('comic'))
                         </td>
                     </tr>
                 @empty

@@ -22,7 +22,8 @@
     <p><strong>Date of sales:</strong> {{ $comic->sale_date }}</p>
     <p class="text-muted mt-5">{{ $comic->slug }} / {{ $comic->created_at}} / {{ $comic->updated_at }}</p>
     <div class="text-end">
-        <a href="{{ route('comics.index') }}" class="btn btn-primary fs-4">Back</a>
+        <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning mb-5 fs-5"><i class="fa-solid fa-pen"></i></a>
+        <a href="{{ route('comics.index') }}" class="btn btn-primary mb-5 fs-5">Back</a>
     </div>
 </div>
 @endsection

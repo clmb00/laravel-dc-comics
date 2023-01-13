@@ -10,8 +10,8 @@
 @endsection
 
 @section('content')
-<div class="container">
-    <h1>Edit - {{ $comic->title}}</h1>
+    <div class="container">
+        <h1 style="display: inline;">Edit - {{ $comic->title}}</h1>
     <form action="{{ route('comics.update', $comic) }}" method="POST">
         @csrf
         @method('PUT')
@@ -48,7 +48,12 @@
           <div id="typeHelp" class="form-text">Max length 40 char.</div>
         </div>
         <a href="{{ route('comics.index') }}" class="btn btn-primary">Back</a>
-        <button type="submit" class="btn btn-warning">Edit</button>
+        <button type="submit" class="btn btn-success">Edit</button>
     </form>
-</div>
+
+    <div class="d-flex justify-content-end">
+        @include('partials.form_delete', compact('comic'))
+    </div>
+
+    </div>
 @endsection
